@@ -1,0 +1,11 @@
+package com.crudApp;
+
+public class Users {
+	private String name;
+	private String adress;
+	private String state;
+	private String city;
+	private long pcode;
+	
+
+}

@@ -1,0 +1,42 @@
+package com.crudApp;
+
+import com.crudApp.Users;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.crudApp.repository.UserRepository;
+
+@Service
+public class EventService {
+	@Autowired
+	private UserRepository userRepository;
+	
+	public Users add(String name,String address,String state,String city,Long pcode) {
+		return userRepository.save(new Users(name,address,state,city,pcode));
+	}
+	
+	public List<Users>getall(){
+		return userRepository.findAll();
+	}
+	public Users getByName(String name) {
+		return userRepository.findByName(name);
+	}
+	public Users update(String name,String address,String state,String city,Long pcode) {
+		Users u=userRepository.findByName(name);
+		u.setAddress(address);
+		u.setState(state);
+		u.setCity(city);
+		u.setPcode(pcode);
+		return userRepository.save(u);
+	}
+	public void deleteall() {
+		userRepository.deleteAll();
+	}
+	public void delete(String name) {
+		Users u=userRepository.findByName(name);
+		userRepository.delete(u);
+	}
+}

@@ -1,0 +1,18 @@
+package com.crudApp;
+
+import org.apache.tomcat.jni.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.crudApp.repository.UserRepository;
+
+@Service
+public class EventService {
+	@Autowired
+	private UserRepository userRepository;
+	
+	public User add(String name,String address,String state,String city,Long pcode) {
+		return userRepository.save(new User(name,address,state,city,pcode));
+	}
+
+}

@@ -1,0 +1,7 @@
+package com.crudApp;
+
+@RestController
+public class EventResource {
+	
+
+}

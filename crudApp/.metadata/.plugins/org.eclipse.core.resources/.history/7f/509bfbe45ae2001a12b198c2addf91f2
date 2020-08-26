@@ -1,0 +1,5 @@
+package com.crudApp.repository;
+
+public class UserRepository {
+
+}

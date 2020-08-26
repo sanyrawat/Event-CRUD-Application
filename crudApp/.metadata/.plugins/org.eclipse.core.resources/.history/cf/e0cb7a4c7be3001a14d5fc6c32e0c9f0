@@ -1,0 +1,4 @@
+
+spring.data.mongodb.uri=mongodb://user1:user1@localhost:27017/test
+
+server.port=8090

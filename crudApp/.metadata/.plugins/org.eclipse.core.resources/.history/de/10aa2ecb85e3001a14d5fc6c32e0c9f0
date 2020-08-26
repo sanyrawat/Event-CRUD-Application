@@ -1,0 +1,62 @@
+package com.crudApp;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.stereotype.Service;
+import org.springframework.data.annotation.Id;
+
+@Service
+@Document(collection="user")
+
+public class Users {
+	@Id
+	String id;
+	private String name;
+	private String address;
+	private String state;
+	private String city;
+	private long pcode;
+	
+	public Users(String name,String address, String state,String city,long pcode) {
+		this.name=name;
+		this.address=address;
+		this.city=city;
+		this.state=state;
+		this.pcode=pcode;
+	}
+	public Users() {}
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String adress) {
+		this.address = adress;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public long getPcode() {
+		return pcode;
+	}
+	public void setPcode(long pcode) {
+		this.pcode = pcode;
+	}
+	
+	public String toString() {
+		return "Name :"+ name+"Address :"+address+"State/Province :"+state+"City :"+city+"Pin Code :"+pcode;
+	}
+}

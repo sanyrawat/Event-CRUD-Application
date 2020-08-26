@@ -1,0 +1,5 @@
+package com.crudApp;
+
+public @interface RestController {
+
+}
